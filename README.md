@@ -14,3 +14,6 @@ cd tutorial-app<br>
 
 //inicia servidor de desenvolvimento<br>
 php artisan serve<br>
+
+
+limpar arquivos nao rastreaveis do git -> git clean  -d  -f .
