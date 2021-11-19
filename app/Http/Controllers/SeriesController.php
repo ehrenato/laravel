@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class SeriesController extends Controller
 {
     //faz uma requisição
-    public function listarSeries(Request $request)
+    public function index(Request $request)
     {
 
         $series = [

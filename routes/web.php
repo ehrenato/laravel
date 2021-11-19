@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 //Rota para series, chama o controller e executa o método @...
-Route::get('/series', [SeriesController::class, 'listarSeries']);
+Route::get('/series', [SeriesController::class, 'index']);
 
 Route::get('/series/criar', [SeriesController::class, 'create']);
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Código principal do layout da aplicação-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +14,10 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1></h1>
+            <h1>@yield('cabecalho')</h1>
         </div>
+             {{-- invoca o código da seção do código herdado --}}
+        @yield('conteudo')
     </div>
 </body>
 
