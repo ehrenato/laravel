@@ -13,7 +13,9 @@ Séries
 
         @foreach ($series as $serie)
         <ul class="list-group">
-                <li class="list-group-item"><?= $serie; ?></li>
+               <li class="list-group-item"> 
+                       {{$serie->nome; }} {{-- Sintaxe do Blade que substitui o php--}}
+               </li> 
            @endforeach
         </ul>
     

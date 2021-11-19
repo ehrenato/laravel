@@ -5,7 +5,10 @@ Adicionar Série
 @endsection
        
     @section('conteudo')
+  
+      
         <form method="post">
+            @csrf     {{-- proteção de dados --}}
            <div class="form-group">
                <label for="nome" class="">Nome</label>
                <input class="form-control" type="text" name="nome">
