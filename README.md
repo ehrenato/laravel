@@ -14,3 +14,12 @@ cd tutorial-app<br>
 
 //inicia servidor de desenvolvimento<br>
 php artisan serve<br>
+
+//caso o servidor não esteja rodando<br>
+php artisan key:generate<br>
+
+//migrations para o banco de dados<br>
+php artisan make:migration criar_tabela_nome<br>
+php artisan migrate
+
+limpar arquivos nao rastreaveis do git -> git clean  -d  -f .
