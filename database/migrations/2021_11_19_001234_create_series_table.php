@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CriarTabelaSeries extends Migration
+class CreateSeriesTable extends Migration
 {
     // Roda o equema de criação da tabela.
 
@@ -16,7 +16,7 @@ class CriarTabelaSeries extends Migration
     //Increments = campo auto incremento
     {
         Schema::create('series', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('nome');
             $table->timestamps();
             
