@@ -2,19 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeriesController;
+
 //Registrar rotas para a aplicação. Definir o caminho e o que será exibido.
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-//Rota para series, chama o controller e executa o método @...
-Route::get('/series', [SeriesController::class, 'index']);
-
-Route::get('/series/criar', [SeriesController::class, 'create']);
-
-Route::post('/series/criar', [SeriesController::class, 'store']);
-
+//Requisição HTTP, rota para series, chama o controller e executa o método / name = alias
+Route::get('/series', [SeriesController::class, 'index'])->name('listar_series');
+Route::get('/series/criar', [SeriesController::class, 'create'])->name('criar_serie');
+Route::post('/series/criar', [SeriesController::class, 'store'])->name('gravar_serie');
+Route::post('/series/remover/{id}', [SeriesController::class, 'destroy'])->name('deletar_serie');
 
 
 

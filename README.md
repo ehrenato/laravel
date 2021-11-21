@@ -22,4 +22,7 @@ php artisan key:generate<br>
 php artisan make:migration criar_tabela_nome<br>
 php artisan migrate
 
+//já cria o model e a migration<br>
+php artisan make:model Exemplo -m<br>
+
 limpar arquivos nao rastreaveis do git -> git clean  -d  -f .

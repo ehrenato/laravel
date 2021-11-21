@@ -13,10 +13,13 @@ class CriarTabelaSeries extends Migration
     public function up()
     //Schema trata das informações pertinentes a cada tipo de BD's. Um termo é branco é preenchido pelo schema.
     //Blueprint é a 'planta' da tabela
+    //Increments = campo auto incremento
     {
         Schema::create('series', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nome');
             $table->timestamps();
+            
         });
     }
 
