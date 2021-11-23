@@ -2,7 +2,10 @@
 
 namespace App\Services;
 
+use App\Models\Episodio;
 use App\Models\Serie;
+use App\Models\Temporada;
+use Illuminate\Http\Request;
 
 
 class CriadorDeSerie

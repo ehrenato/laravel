@@ -5115,6 +5115,7 @@ return array(
     'Symfony\\Contracts\\HttpClient\\Test\\HttpClientTestCase' => $vendorDir . '/symfony/http-client-contracts/Test/HttpClientTestCase.php',
     'Symfony\\Contracts\\HttpClient\\Test\\TestHttpServer' => $vendorDir . '/symfony/http-client-contracts/Test/TestHttpServer.php',
     'Symfony\\Contracts\\Service\\Attribute\\Required' => $vendorDir . '/symfony/service-contracts/Attribute/Required.php',
+    'Symfony\\Contracts\\Service\\Attribute\\SubscribedService' => $vendorDir . '/symfony/service-contracts/Attribute/SubscribedService.php',
     'Symfony\\Contracts\\Service\\ResetInterface' => $vendorDir . '/symfony/service-contracts/ResetInterface.php',
     'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => $vendorDir . '/symfony/service-contracts/ServiceLocatorTrait.php',
     'Symfony\\Contracts\\Service\\ServiceProviderInterface' => $vendorDir . '/symfony/service-contracts/ServiceProviderInterface.php',

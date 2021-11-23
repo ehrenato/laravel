@@ -11,6 +11,7 @@ use App\Models\Temporada;
 use App\Http\Requests\SeriesFormRequest;
 use App\Models\Episodio;
 use App\Services\CriadorDeSerie;
+use App\Services\RemovedorDeSerie;
 
 //herda da classe Controller
 class SeriesController extends Controller
@@ -49,21 +50,10 @@ class SeriesController extends Controller
     }
 
     //função para remover um dado da tabela, pelo campo id. também tem a função de deleção em cascata
-    public function destroy(Request $request)
+    public function destroy(Request $request, RemovedorDeSerie $removedorDeSerie)
     {
-        //busca a serie pelo id
-        $serie = Serie::find($request->id);
-        //armazena o nome da série em questão
-        $nomeSerie = $serie->nome;
-        //pra cada temporada será executada uma função (pelo método) de acordo com o parametro
-        $serie->temporadas->each(function (Temporada $temporada) {
-            $temporada->episodios()->each(function (Episodio $episodio) {
-                $episodio->delete();
-            });
-            $temporada->delete();
-        });
-        $serie->delete();
-
+        //remove a série baseado no id que recebeu
+        $nomeSerie = $removedorDeSerie->removerSerie($request->id);
         $request->session()->flash('mensagem', "Série $nomeSerie removida!");
 
         return redirect()->route('listar_series');
