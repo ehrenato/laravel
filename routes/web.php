@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EpisodiosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\TemporadasController;
@@ -15,9 +16,12 @@ Route::get('/series', [SeriesController::class, 'index'])->name('listar_series')
 Route::get('/series/criar', [SeriesController::class, 'create'])->name('criar_serie');
 Route::post('/series/criar', [SeriesController::class, 'store'])->name('gravar_serie');
 Route::post('/series/remover/{id}', [SeriesController::class, 'destroy'])->name('deletar_serie');
+Route::post('/series/{id}/editaNome', [SeriesController::class, 'editaNome'])->name('edita_nome');
 
 //Rotas do Controller Temporada
 Route::get('/series/{serieId}/temporadas', [TemporadasController::class, 'index']);
+
+Route::get('/temporadas/{temporadaId}/episodios', [EpisodiosController::class, 'index']);
 
 
 

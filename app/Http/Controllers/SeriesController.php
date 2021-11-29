@@ -27,7 +27,7 @@ class SeriesController extends Controller
         //remover alerta após atualizar a página
         $request->session()->remove('mensagem');
 
-        //retorna uma resposta. 1º parâmetro caminho / 2º o que a view renderiza (compact é a chave buscar a variável de mesmo nome)
+        //retorna uma resposta. 1º parâmetro caminho / 2º o que a view renderiza (compact é a chave para buscar a variável de mesmo nome)
         return view('series.index', compact('series', 'mensagem'));
     }
 
@@ -57,5 +57,13 @@ class SeriesController extends Controller
         $request->session()->flash('mensagem', "Série $nomeSerie removida!");
 
         return redirect()->route('listar_series');
+    }
+
+    public function editaNome(int $id, Request $request)
+    {
+        $serie = Serie::find($id);
+        $novoNome = $request->nome;
+        $serie->nome = $novoNome;
+        $serie->save();
     }
 }
